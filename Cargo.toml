@@ -1,0 +1,15 @@
+[package]
+name = "ld_preload_test"
+version = "0.1.0"
+authors = ["Ömer Sinan Ağacan <omeragacan@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "mymalloc"
+crate-type = ["cdylib"]
+
+[dependencies]
+libc = "0.2"
+
+[profile.release]
+lto = true

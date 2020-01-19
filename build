@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cargo build
+gcc test.c -o test
+
+LD_PRELOAD=$(pwd)/target/debug/libmymalloc.so ./test

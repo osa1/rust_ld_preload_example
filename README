@@ -1,0 +1,2 @@
+Example code that overrides libc free with a Rust version. Rust version prints a
+line and calls the libc free.
