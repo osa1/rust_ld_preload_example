@@ -3,7 +3,6 @@
 
 #![no_std]
 #![feature(lang_items, core_intrinsics, link_args)]
-#![link_args = "-ldl"]
 
 use core::panic::PanicInfo;
 use libc::*;
@@ -28,7 +27,7 @@ pub unsafe extern "C" fn free(ptr: *mut c_void) {
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    unsafe { ::core::intrinsics::abort() }
+    ::core::intrinsics::abort()
 }
 
 #[lang = "eh_personality"]
